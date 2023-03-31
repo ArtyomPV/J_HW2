@@ -16,16 +16,14 @@ public class Task4 {
         Scanner sc = new Scanner(System.in);
         System.out.print("\nВведите действие (+, -, *, /): ");
         action = sc.nextLine().charAt(0);
-        logger.info("Введено действие: " + String.valueOf(action));
+        logger.info("Введено действие: " + action);
 
         System.out.print("\nВведите первое число: ");
         number1 = sc.nextDouble();
-        logger.info("Введено первое число: " + String.valueOf(number1));
+        logger.info("Введено первое число: " + number1);
         System.out.print("\nВведите второе число: ");
         number2 = sc.nextDouble();
-        logger.info("Введено второе число: " + String.valueOf(number2));
-//        double result = Operations(action, number1, number2);
-//        System.out.printf("%f ", result);
+        logger.info("Введено второе число: " + number2);
         closeFileHandler(file);
     }
 
@@ -35,17 +33,17 @@ public class Task4 {
         FileHandler file =  startFileHandler(logger);
         if (action == '+') {
             System.out.printf("\n%.2f %c %.2f = %.2f", number1, action, number2, number1 + number2);
-            logger.info(String.valueOf(number1) + '+' + String.valueOf(number2) + '=' + String.valueOf(number1 + number2));
+            logger.info(String.valueOf(number1) + '+' + (number2) + '=' + (number1 + number2));
         } else if (action == '-') {
             System.out.printf("\n%.2f %c %.2f = %.2f", number1, action, number2, number1 - number2);
-            logger.info(String.valueOf(number1) + '-' + String.valueOf(number2) + '=' + String.valueOf(number1 - number2));
+            logger.info(String.valueOf(number1) + '-' + (number2) + '=' + (number1 - number2));
         } else if (action == '*') {
             System.out.printf("\n%.2f %c %.2f = %.2f", number1, action, number2, number1 * number2);
-            logger.info(String.valueOf(number1) + '*' + String.valueOf(number2) + '=' + String.valueOf(number1 * number2));
+            logger.info(String.valueOf(number1) + '*' + number2 + '=' + number1 * number2);
         } else if (action == '/') {
             if (number2 != 0) {
                 System.out.printf("\n%.2f %c %.2f = %.2f", number1, action, number2, number1 / number2);
-                logger.info(String.valueOf(number1) + '/' + String.valueOf(number2) + '=' + String.valueOf(number1 / number2));
+                logger.info(String.valueOf(number1) + '/' + number2 + '=' + number1 / number2);
             } else {
                 System.out.print("\nНа ноль делить нельзя");
                 logger.info("На ноль делить нельзя.");
@@ -61,7 +59,7 @@ public class Task4 {
 
 
 
-    private Logger startLogger() throws IOException {
+    private Logger startLogger(){
         Logger logger = Logger.getLogger(Task4.class.getName());
         logger.setLevel(Level.INFO);
         return logger;
