@@ -27,5 +27,9 @@ public class Main {
         for (int j : sortArr) {
             System.out.print(j + " ");
         }
+
+//        =========  четвертая задача ===================
+        Task4 task4 = new Task4();
+        task4.Operations();
     }
 }
